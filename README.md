@@ -34,7 +34,7 @@
 * 支持EventBus事件总线
 * 支持Router跳转路由
 
-##基本扩展用法示例
+## 基本扩展用法示例
 
 ### ApplicationKit
 
