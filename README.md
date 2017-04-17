@@ -150,8 +150,6 @@
 	
 	}
 
-支持单个多个文件，`addFile`的第一个参数为文件的key，即类别表单中`<input type="file" name="mFile"/>`的name属性。
-
 ### 自定义CallBack
 
 	public interface IView extends IDefaultView {
@@ -159,9 +157,6 @@
 	    void initData();
 	
 	}
-
-注意下载文件可以使用`FileCallback`，需要传入文件需要保存的文件夹以及文件名。
-
 
 ### ACache 扩展 基本数据类型 保存
 
