@@ -34,18 +34,6 @@
 * 支持EventBus事件总线
 * 支持Router跳转路由
 
-## 对于Log
-
-初始化OkhttpClient时，通过设置拦截器实现，框架中提供了一个`LoggerInterceptor `，当然你可以自行实现一个Interceptor 。
-
-```
- OkHttpClient okHttpClient = new OkHttpClient.Builder()
-       .addInterceptor(new LoggerInterceptor("TAG"))
-        //其他配置
-        .build();
-OkHttpUtils.initClient(okHttpClient);
-```
-
 ##基本扩展用法示例
 
 ### ApplicationKit
@@ -229,6 +217,7 @@ OkHttpUtils.initClient(okHttpClient);
 	            "recyclerview-v7"          : "com.android.support:recyclerview-v7:${android["VSupportSdk"]}",
 	            "butterknife"              : "com.jakewharton:butterknife:8.4.0",
 	            "butterknife-apt"          : "com.jakewharton:butterknife-compiler:8.4.0",
+	            "mLibrary"                 : "com.github.wangrui1662729966:mLibrary:v1.0.0",
 	            "autolayout"               : "com.zhy:autolayout:1.4.5",
 	            "eventbus"                 : "org.greenrobot:eventbus:3.0.0",       
 	            "multidex"                 : "com.android.support:multidex:1.0.1",
