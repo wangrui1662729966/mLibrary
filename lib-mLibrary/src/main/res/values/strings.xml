@@ -1,0 +1,11 @@
+<resources>
+
+    <string name="app_name">MLibrary</string>
+    <string name="app_version">1.0.0</string>
+
+    <string name="mLibrary_error_local">请稍后，数据处理异常~</string>
+    <string name="mLibrary_error_network">网络异常，请检查网络~</string>
+
+    <string name="mLibrary_loading">数据加载中...</string>
+
+</resources>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/custom_progress_bg"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/iv_loading"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/custom_progress_anim_bg"
+        android:contentDescription="@string/app_name"/>
+
+    <TextView
+        android:id="@+id/tv_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:textColor="#fff"
+        android:textSize="16sp"
+        android:visibility="gone"/>
+
+</LinearLayout>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/toast_shape"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/m_little_margin"
+            android:layout_marginTop="@dimen/m_common_margin"
+            android:gravity="center"
+            android:text="消息提示"
+            android:textColor="@color/ios_blue"
+            android:textSize="16sp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@android:color/darker_gray"></View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginBottom="@dimen/m_little_margin"
+                android:layout_marginLeft="@dimen/m_big_margin"
+                android:layout_marginRight="@dimen/m_big_margin"
+                android:layout_marginTop="@dimen/m_small_margin"
+                android:gravity="center_vertical"
+                android:text="选择一种愉悦的极速开发模式！"
+                android:textColor="@color/ios_black"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

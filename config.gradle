@@ -1,0 +1,45 @@
+ext {
+
+    android = [
+            compileSdkVersion: 24,
+            buildToolsVersion: "24.0.3",
+
+            minSdkVersion    : 11,
+            targetSdkVersion : 24,
+
+            versionCode      : 100,
+            versionName      : '1.0.0',
+
+            VSupportSdk      : '24.2.1',
+    ]
+
+    dependencies = [
+            "appcompat-v7"             : "com.android.support:appcompat-v7:${android["VSupportSdk"]}",
+            "support-v4"               : "com.android.support:support-v4:${android["VSupportSdk"]}",
+            "design"                   : "com.android.support:design:${android["VSupportSdk"]}",
+            "recyclerview-v7"          : "com.android.support:recyclerview-v7:${android["VSupportSdk"]}",
+            "butterknife"              : "com.jakewharton:butterknife:8.4.0",
+            "butterknife-apt"          : "com.jakewharton:butterknife-compiler:8.4.0",
+            "autolayout"               : "com.zhy:autolayout:1.4.5",
+            "eventbus"                 : "org.greenrobot:eventbus:3.0.0",
+            "crashreport_upgrade"      : "com.tencent.bugly:crashreport_upgrade:1.2.1",
+            "nativecrashreport"        : "com.tencent.bugly:nativecrashreport:latest.release",
+            "fastjson"                 : "com.alibaba:fastjson:1.2.21",
+            "gson"                     : "com.google.code.gson:gson:2.7",
+            "okhttputils"              : "com.zhy:okhttputils:2.6.2",
+            "canary-debug"             : "com.squareup.leakcanary:leakcanary-android:1.4-beta2",
+            "canary-release"           : "com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2",
+            "multidex"                 : "com.android.support:multidex:1.0.1",
+            "rxandroid"                : "io.reactivex:rxandroid:latest.release",
+            "retrofit"                 : "com.squareup.retrofit2:retrofit:2.1.0",
+            "picasso"                  : "com.squareup.picasso:picasso:2.5.2",
+            "circleimageview"          : "de.hdodenhof:circleimageview:2.1.0",
+            "converter-scalars"        : "com.squareup.retrofit2:converter-scalars:2.1.0",
+            "converter-gson"           : "com.squareup.retrofit2:converter-gson:2.1.0",
+            "adapter-rxjava"           : "com.squareup.retrofit2:adapter-rxjava:2.1.0",
+            "junit"                    : "junit:junit:4.12",
+            "rxpermissions"            : "com.tbruyelle.rxpermissions:rxpermissions:0.9.3@aar",
+            "permissionsdispatcher"    : "com.github.hotchemi:permissionsdispatcher:2.3.2",
+            "permissionsdispatcher-apt": "com.github.hotchemi:permissionsdispatcher-processor:2.3.2",
+    ]
+}

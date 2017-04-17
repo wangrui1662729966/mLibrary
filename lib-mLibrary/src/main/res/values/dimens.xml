@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="m_small_padding">5dp</dimen>
+    <dimen name="m_little_padding">10dp</dimen>
+    <dimen name="m_common_padding">15dp</dimen>
+    <dimen name="m_medium_padding">15dp</dimen>
+    <dimen name="m_big_padding">20dp</dimen>
+
+    <dimen name="m_small_margin">5dp</dimen>
+    <dimen name="m_little_margin">10dp</dimen>
+    <dimen name="m_common_margin">15dp</dimen>
+    <dimen name="m_medium_margin">15dp</dimen>
+    <dimen name="m_big_margin">20dp</dimen>
+</resources>
