@@ -13,13 +13,12 @@ import android.view.ViewGroup;
 import com.zenchn.mlibrary.event.BusFactory;
 import com.zenchn.mlibrary.kit.KnifeKit;
 
-
 /**
  * 作    者：wangr on 2017/2/24 14:33
  * 描    述：
  * 修订记录：
  */
-public abstract class DefaultFragment extends Fragment implements UiCallback, DefaultView {
+public abstract class DefaultFragment extends Fragment implements UiCallback, IDefaultView {
 
     protected UiCallback uiCallback;
     protected View rootView;
@@ -51,6 +50,19 @@ public abstract class DefaultFragment extends Fragment implements UiCallback, De
             BusFactory.getBus().register(this);//设置eventBus
     }
 
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (useEventBus())
+            BusFactory.getBus().unregister(this);
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        uiCallback = null;
+    }
+
     private void initBaseData() {
         if (useUiHandler()) {
             mHandler = new UiHandler(Looper.getMainLooper());//设置主线程的handler
@@ -72,19 +84,13 @@ public abstract class DefaultFragment extends Fragment implements UiCallback, De
         return false;
     }
 
-    protected abstract void getChildView(LayoutInflater inflater, View rootView);
-
     @Override
-    public void onStop() {
-        super.onStop();
-        if (useEventBus())
-            BusFactory.getBus().unregister(this);
+    public boolean useEventBus() {
+        return false;
     }
 
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        uiCallback = null;
+    protected void getChildView(LayoutInflater inflater, View rootView) {
+
     }
 
     @Override

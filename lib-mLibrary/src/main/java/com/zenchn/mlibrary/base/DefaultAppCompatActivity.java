@@ -25,7 +25,7 @@ import com.zenchn.mlibrary.widget.CustomProgress;
  * 修订记录：
  */
 
-public abstract class  DefaultAppCompatActivity extends FragmentActivity implements UiCallback, DefaultView {
+public abstract class  DefaultAppCompatActivity extends FragmentActivity implements UiCallback, IDefaultView {
 
     protected IApplicationKit mApplicationKit;//代理类
     protected CustomProgress mProgress;//加载提示框

@@ -6,9 +6,9 @@ import android.os.Message;
 
 
 /**
- * service基础类
- *
- * @author xuxu
+ * 作    者：wangr on 2017/4/17 14:25
+ * 描    述： 
+ * 修订记录：
  */
 public abstract class DefaultService extends Service {
 

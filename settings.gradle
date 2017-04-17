@@ -1,1 +1,1 @@
-include ':app', 'lib-mLibrary'
+include ':sample','lib-mLibrary'

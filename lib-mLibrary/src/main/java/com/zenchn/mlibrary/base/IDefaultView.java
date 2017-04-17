@@ -1,6 +1,6 @@
 package com.zenchn.mlibrary.base;
 
-public interface DefaultView {
+public interface IDefaultView extends UiCallback{
 
     boolean useUiHandler();
 
