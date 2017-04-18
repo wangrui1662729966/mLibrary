@@ -20,7 +20,7 @@ public abstract class DefaultFragmentActivity extends DefaultAppCompatActivity i
     private Stack<WeakReference<Fragment>> fragmentStack = new Stack<>();
 
     @Override
-    public int getLayoutRes() {
+    public final int getLayoutRes() {
         return R.layout.m_default_fragment_activity_layout;
     }
 

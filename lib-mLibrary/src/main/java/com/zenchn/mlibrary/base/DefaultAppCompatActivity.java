@@ -43,6 +43,7 @@ public abstract class  DefaultAppCompatActivity extends FragmentActivity impleme
             setContentView(getLayoutRes());
             KnifeKit.bind(this);
         }
+        initWidget();
     }
 
     @Override
