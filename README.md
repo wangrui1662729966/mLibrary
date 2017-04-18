@@ -17,7 +17,7 @@
 * Android Studio
 	
 	```
-	compile 'com.github.wangrui1662729966:mLibrary:v1.0.0'
+	compile 'com.github.wangrui1662729966:mLibrary:1.0.0-beta'
 	```
 	
 	
