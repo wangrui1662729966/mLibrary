@@ -212,7 +212,7 @@
 	            "recyclerview-v7"          : "com.android.support:recyclerview-v7:${android["VSupportSdk"]}",
 	            "butterknife"              : "com.jakewharton:butterknife:8.4.0",
 	            "butterknife-apt"          : "com.jakewharton:butterknife-compiler:8.4.0",
-	            "mLibrary"                 : "com.github.wangrui1662729966:mLibrary:v1.0.0",
+	            "mLibrary"                 : "com.github.wangrui1662729966:mLibrary:v1.0.0-beta",
 	            "autolayout"               : "com.zhy:autolayout:1.4.5",
 	            "eventbus"                 : "org.greenrobot:eventbus:3.0.0",       
 	            "multidex"                 : "com.android.support:multidex:1.0.1",
