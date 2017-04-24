@@ -1,29 +1,21 @@
 package com.zenchn.mlibrary.utils;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
 
+/**
+ * 作    者：wangr on 2017/4/24 11:09
+ * 描    述：ZIP压缩工具类
+ * 修订记录：
+ */
 public class GZIPUtils {
 
-
-    public static void main(String[] args) {
-        try {
-//			unZip(new FileInputStream(new File("location.zip")), new FileOutputStream(new File("location.db")));
-            zip(new FileInputStream(new File("location.zip")), new FileOutputStream(new File("location.db")));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    private GZIPUtils() {
+        throw new UnsupportedOperationException("u can't instantiate me...");
     }
-
 
     /**
      * GZIP解压

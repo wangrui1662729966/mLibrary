@@ -4,7 +4,9 @@ import android.hardware.Camera;
 import android.util.Log;
 
 /**
- * Created by wangr on 2016/10/31 0031.
+ * 作    者：wangr on 2017/4/24 11:04
+ * 描    述：相机工具类
+ * 修订记录：
  */
 public class CameraUtils {
 

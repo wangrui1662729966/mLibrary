@@ -8,10 +8,10 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
 
-
 /**
- * 作者：wangr on 2017/1/4 9:32
- * 描述：编码解码相关工具类
+ * 作    者：wangr on 2017/4/24 11:12
+ * 描    述：编码解码工具类
+ * 修订记录：
  */
 public class EncodeUtils {
 

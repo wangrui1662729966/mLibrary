@@ -9,8 +9,9 @@ import android.telephony.TelephonyManager;
 import java.util.List;
 
 /**
- * 作者：wangr on 2017/1/4 10:41
- * 描述：网络工具类
+ * 作    者：wangr on 2017/1/4 10:41
+ * 描    述：网络工具类
+ * 修订记录：
  */
 public class NetworkUtils {
 

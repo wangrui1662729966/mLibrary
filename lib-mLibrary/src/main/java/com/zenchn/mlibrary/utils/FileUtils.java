@@ -29,10 +29,16 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * 作者：wangr on 2017/1/4 9:32
- * 描述：文件工具类
+ * 作    者：wangr on 2017/4/24 11:12
+ * 描    述：文件工具类
+ * 修订记录：
  */
 public class FileUtils {
+
+    private FileUtils() {
+        throw new UnsupportedOperationException("u can't instantiate me...");
+    }
+
     public static String appFilesDir = "";
 
     public static String getSDPATH() {

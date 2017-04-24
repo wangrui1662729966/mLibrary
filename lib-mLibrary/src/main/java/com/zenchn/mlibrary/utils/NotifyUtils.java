@@ -15,6 +15,11 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+/**
+ * 作    者：wangr on 2017/4/24 11:05
+ * 描    述：通知工具类
+ * 修订记录：
+ */
 @SuppressLint("NewApi")
 public class NotifyUtils {
 

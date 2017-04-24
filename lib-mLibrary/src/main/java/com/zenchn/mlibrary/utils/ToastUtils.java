@@ -10,10 +10,10 @@ import android.widget.Toast;
 
 import com.zenchn.mlibrary.R;
 
-
 /**
- * 作者：wangr on 2017/1/4 10:26
- * 描述：Toast工具类
+ * 作    者：wangr on 2017/4/24 11:05
+ * 描    述：Toast工具类
+ * 修订记录：
  */
 public class ToastUtils {
 

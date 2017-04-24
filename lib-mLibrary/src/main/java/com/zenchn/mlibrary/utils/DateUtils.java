@@ -15,6 +15,11 @@ import java.util.TimeZone;
 /**
  * 日期工具类
  */
+/**
+ * 作    者：wangr on 2017/4/24 11:13
+ * 描    述：日期工具类 
+ * 修订记录：
+ */
 public class DateUtils {
 
     private static Calendar calendar;
