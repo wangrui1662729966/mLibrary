@@ -1,6 +1,8 @@
 package com.zenchn.librarydemo.app;
 
-import com.zenchn.library.base.DefaultApplicationKit;
+import com.zenchn.library.base.ActivityLifecycleCallback;
+import com.zenchn.library.dafault.DefaultActivityLifecycle;
+import com.zenchn.library.dafault.DefaultApplicationKit;
 import com.zenchn.library.base.IApplicationKit;
 
 /**
@@ -8,7 +10,7 @@ import com.zenchn.library.base.IApplicationKit;
  * 描    述：
  * 修订记录：
  */
-public class ApplicationKit extends DefaultApplicationKit implements IApplicationKit {
+public class ApplicationKit extends DefaultApplicationKit implements IApplicationKit, ActivityLifecycleCallback {
 
     private ApplicationKit() {
     }
@@ -19,5 +21,30 @@ public class ApplicationKit extends DefaultApplicationKit implements IApplicatio
 
     public static ApplicationKit getInstance() {
         return SingletonInstance.INSTANCE;
+    }
+
+    @Override
+    public void initSetting() {
+        super.initSetting();
+        initActivityLifecycle();
+    }
+
+    private void initActivityLifecycle() {
+        DefaultActivityLifecycle.getInstance().addCallback(this);
+    }
+
+    @Override
+    public void onBackground() {
+
+    }
+
+    @Override
+    public void onForeground() {
+
+    }
+
+    @Override
+    public void onDestroyedSelf() {
+
     }
 }

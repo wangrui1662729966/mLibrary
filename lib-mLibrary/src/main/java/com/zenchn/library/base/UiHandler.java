@@ -6,27 +6,23 @@ import android.os.Message;
 
 public class UiHandler extends Handler {
 
-    private IHandler handler;//回调接口，消息传递给注册者
+    private IHandler mHandler;
 
-    public UiHandler(Looper looper) {
-        super(looper);
+    public UiHandler() {
+        super(Looper.getMainLooper());
     }
 
-    public UiHandler(Looper looper, IHandler handler) {
-        super(looper);
-        this.handler = handler;
-    }
-
-    public void setHandler(IHandler handler) {
-        this.handler = handler;
+    public UiHandler(IHandler mHandler) {
+        super(Looper.getMainLooper());
+        this.mHandler = mHandler;
     }
 
     @Override
     public void handleMessage(Message msg) {
         super.handleMessage(msg);
-        if (handler != null) {
-            handler.handleMessage(msg);//有消息，就传递
-        }
+        if (mHandler != null)
+            mHandler.handleMessage(msg);//有消息，就传递
     }
+
 }
 

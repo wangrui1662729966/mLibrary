@@ -71,5 +71,46 @@ public class CrashUtils {
                 CloseUtils.closeIO(printWriter);
         }
     }
+
+    /**
+     * 保存异常信息到本地
+     *
+     * @param printWriter
+     * @param context
+     */
+    public static void printException(PrintWriter printWriter, Context context) {
+
+        try {
+            printWriter.print("================Build================\n");
+            printWriter.print(String.format("BOARD\t%s\n", Build.BOARD));
+            printWriter.print(String.format("BOOTLOADER\t%s\n", Build.BOOTLOADER));
+            printWriter.print(String.format("BRAND\t%s\n", Build.BRAND));
+            printWriter.print(String.format("CPU_ABI\t%s\n", Build.CPU_ABI));
+            printWriter.print(String.format("CPU_ABI2\t%s\n", Build.CPU_ABI2));
+            printWriter.print(String.format("DEVICE\t%s\n", Build.DEVICE));
+            printWriter.print(String.format("DISPLAY\t%s\n", Build.DISPLAY));
+            printWriter.print(String.format("FINGERPRINT\t%s\n", Build.FINGERPRINT));
+            printWriter.print(String.format("HARDWARE\t%s\n", Build.HARDWARE));
+            printWriter.print(String.format("HOST\t%s\n", Build.HOST));
+            printWriter.print(String.format("ID\t%s\n", Build.ID));
+            printWriter.print(String.format("MANUFACTURER\t%s\n", Build.MANUFACTURER));
+            printWriter.print(String.format("MODEL\t%s\n", Build.MODEL));
+            printWriter.print(String.format("SERIAL\t%s\n", Build.SERIAL));
+            printWriter.print(String.format("PRODUCT\t%s\n", Build.PRODUCT));
+            printWriter.print("================APP================\n");
+            PackageInfo packageInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
+            int versionCode = packageInfo.versionCode;
+            String versionName = packageInfo.versionName;
+            printWriter.print(String.format("versionCode\t%s\n", versionCode));
+            printWriter.print(String.format("versionName\t%s\n", versionName));
+            printWriter.print("================Exception================\n");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (printWriter != null)
+                CloseUtils.closeIO(printWriter);
+        }
+    }
 }
 

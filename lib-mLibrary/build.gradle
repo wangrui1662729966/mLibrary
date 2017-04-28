@@ -27,6 +27,6 @@ dependencies {
     compile rootProject.ext.dependencies["recyclerview-v7"]
     compile rootProject.ext.dependencies["butterknife"]
     apt rootProject.ext.dependencies["butterknife-apt"]
-    compile rootProject.ext.dependencies["eventbus"]
     compile rootProject.ext.dependencies["autolayout"]
+    compile rootProject.ext.dependencies["logger"]
 }

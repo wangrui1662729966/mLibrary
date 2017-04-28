@@ -1,6 +1,5 @@
 package com.zenchn.library.base;
 
-import android.support.annotation.LayoutRes;
 import android.support.annotation.StringRes;
 
 /**
@@ -10,23 +9,14 @@ import android.support.annotation.StringRes;
  */
 public interface UiCallback {
 
-    @LayoutRes
-    int getLayoutRes();
-
-    void initWidget();
-
     void showProgress();
-
-    void updateProgress(int diff, String progress);
 
     void hideProgress();
 
-    void showMessage(String message);
+    void updateProgress(int progressDiff, String progressMsg);
+
+    void showMessage(String msg);
 
     void showResMessage(@StringRes int resId);
-
-    void onResponseError(String msg);
-
-    void onFailure();
 
 }

@@ -3,7 +3,6 @@ package com.zenchn.library.utils;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Looper;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
@@ -21,13 +20,18 @@ public class CommonUtils {
 
     private static long lastClickTime;
     private static ExecutorService executorService = Executors.newCachedThreadPool();
-    private static UiHandler handler = new UiHandler(Looper.getMainLooper());
+
+    private static UiHandler uiHandler = null;
 
     public static UiHandler getUIHandler() {
-        if (handler != null) {
-            handler = new UiHandler(Looper.getMainLooper());
+        if (uiHandler == null) {
+            synchronized (CommonUtils.class) {
+                if (uiHandler == null) {
+                    uiHandler = new UiHandler();
+                }
+            }
         }
-        return handler;
+        return uiHandler;
     }
 
     /**
@@ -60,7 +64,7 @@ public class CommonUtils {
      * @param task
      */
     public static void runOnUIThread(Runnable task) {
-        handler.post(task);
+        uiHandler.post(task);
     }
 
     /**

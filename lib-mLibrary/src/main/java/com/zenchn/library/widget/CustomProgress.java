@@ -16,10 +16,10 @@ import com.zenchn.library.R;
 
 public class CustomProgress extends ProgressDialog implements OnShowListener, OnDismissListener {
 
-    Context context;
-    ImageView imageview;
-    TextView textView;
-    String msg;
+    private Context context;
+    private ImageView imageview;
+    private TextView textView;
+    private String msg;
 
     public CustomProgress(Context context) {
         this(context, R.style.AppTheme_Dialog_NoTitleBar);

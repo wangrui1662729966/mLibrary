@@ -1,6 +1,5 @@
 package com.zenchn.library.base;
 
-import android.app.Activity;
 import android.app.Application;
 
 /**
@@ -14,15 +13,6 @@ public interface IApplicationKit {
 
     Application getApplication();
 
-    void initCustomSetting();
+    void initSetting();
 
-    Activity getTopActivity();
-
-    void addActivity(Activity activity);
-
-    void removeActivity(Activity activity);
-
-    void finishAllActivity();
-
-    void exitApp();
 }

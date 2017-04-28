@@ -23,6 +23,6 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void initData() {
-
+        throw  new RuntimeException("text runtimeException");
     }
 }

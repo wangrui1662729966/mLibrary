@@ -1,9 +1,11 @@
 package com.zenchn.library.base;
 
-public interface IDefaultView extends UiCallback{
+import android.support.annotation.LayoutRes;
 
-    boolean useUiHandler();
+public interface IDefaultView extends UiCallback {
 
-    boolean useEventBus();
+    @LayoutRes
+    int getLayoutRes();
 
+    void initWidget();
 }

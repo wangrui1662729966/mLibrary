@@ -11,6 +11,8 @@ import android.support.v4.app.Fragment;
  */
 public interface IDefaultFragmentView extends IDefaultView {
 
+    IUiController getUiController();//获取UI控制器
+
     void inflateFragment(@IdRes int containerViewId, @NonNull Fragment fragment);//填充到指定容器
 
     void returnToDefaultFragment(@NonNull Fragment targetFragment);//返回主功能菜单页

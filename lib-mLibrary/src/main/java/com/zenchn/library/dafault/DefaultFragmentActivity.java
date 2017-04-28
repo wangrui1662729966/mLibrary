@@ -1,10 +1,13 @@
-package com.zenchn.library.base;
+package com.zenchn.library.dafault;
 
 import android.support.annotation.CallSuper;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 
 import com.zenchn.library.R;
+import com.zenchn.library.base.IDefaultFragmentView;
+import com.zenchn.library.base.IUiController;
 import com.zenchn.library.utils.KeyboardUtils;
 
 import java.lang.ref.WeakReference;
@@ -15,7 +18,7 @@ import java.util.Stack;
  * 描    述：
  * 修订记录：
  */
-public abstract class DefaultFragmentActivity extends DefaultAppCompatActivity implements UiCallback, IDefaultFragmentView {
+public abstract class DefaultFragmentActivity extends DefaultAppCompatActivity implements IDefaultFragmentView {
 
     private Stack<WeakReference<Fragment>> fragmentStack = new Stack<>();
 
@@ -31,7 +34,12 @@ public abstract class DefaultFragmentActivity extends DefaultAppCompatActivity i
     }
 
     @Override
-    public void inflateFragment(int containerViewId, Fragment fragment) {
+    public IUiController getUiController() {
+        return mUiController;
+    }
+
+    @Override
+    public void inflateFragment(int containerViewId, @NonNull Fragment fragment) {
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(containerViewId, fragment)
@@ -39,7 +47,7 @@ public abstract class DefaultFragmentActivity extends DefaultAppCompatActivity i
     }
 
     @Override
-    public void returnToDefaultFragment(Fragment targetFragment) {
+    public void returnToDefaultFragment(@NonNull Fragment targetFragment) {
         Fragment defaultFragment = null;
         if (!fragmentStack.isEmpty())
             defaultFragment = fragmentStack.get(0).get();
@@ -48,7 +56,7 @@ public abstract class DefaultFragmentActivity extends DefaultAppCompatActivity i
         showDefaultFragment(defaultFragment);
     }
 
-    private void showDefaultFragment(Fragment defaultFragment) {
+    private void showDefaultFragment(@NonNull Fragment defaultFragment) {
         fragmentStack.clear();
         fragmentStack.add(new WeakReference<>(defaultFragment));
         inflateFragment(R.id.fragment_container, defaultFragment);
@@ -57,7 +65,7 @@ public abstract class DefaultFragmentActivity extends DefaultAppCompatActivity i
     protected abstract Fragment getDefaultFragment();
 
     @Override
-    public void goToNextFragment(Fragment targetFragment) {
+    public void goToNextFragment(@NonNull Fragment targetFragment) {
         Fragment sourceFragment = fragmentStack.peek().get();
         if (sourceFragment != null)
             switchFragment(sourceFragment, targetFragment);
@@ -77,7 +85,7 @@ public abstract class DefaultFragmentActivity extends DefaultAppCompatActivity i
     }
 
     @Override
-    public void switchFragment(Fragment sourceFragment, Fragment targetFragment) {
+    public void switchFragment(@NonNull Fragment sourceFragment, @NonNull Fragment targetFragment) {
         if (fragmentStack.peek().get() != targetFragment) {
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             if (targetFragment.isAdded())

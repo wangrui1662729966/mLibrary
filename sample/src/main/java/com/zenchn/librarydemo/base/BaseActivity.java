@@ -1,11 +1,11 @@
 package com.zenchn.librarydemo.base;
 
 import android.os.Bundle;
-import android.os.Message;
+import android.support.annotation.NonNull;
 
-import com.zenchn.librarydemo.app.ApplicationKit;
-import com.zenchn.library.base.DefaultAppCompatActivity;
-import com.zenchn.library.base.IApplicationKit;
+import com.zenchn.library.base.IActivityLifecycle;
+import com.zenchn.library.dafault.DefaultActivityLifecycle;
+import com.zenchn.library.dafault.DefaultAppCompatActivity;
 
 
 /**
@@ -22,9 +22,10 @@ public abstract class BaseActivity extends DefaultAppCompatActivity implements I
         initWidget();
     }
 
+    @NonNull
     @Override
-    protected IApplicationKit getDefaultApplicationKit() {
-        return ApplicationKit.getInstance();
+    protected IActivityLifecycle getDefaultActivityLifecycle() {
+        return DefaultActivityLifecycle.getInstance();
     }
 
     //界面布局的初始化操作
@@ -38,14 +39,11 @@ public abstract class BaseActivity extends DefaultAppCompatActivity implements I
 
     }
 
-    //如果需要接受消息(useUiHandler()=true)，则重写该方法接收消息
-    protected void handler(Message msg) {
-    }
-
     @Override
     public void onStart() {
         super.onStart();
         initData();
     }
+
 
 }

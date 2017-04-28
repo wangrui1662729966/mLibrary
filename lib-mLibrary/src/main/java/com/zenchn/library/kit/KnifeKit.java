@@ -36,7 +36,6 @@ public class KnifeKit {
         return Unbinder.EMPTY;
     }
 
-
     public static void unBind(Unbinder unbinder) {
         if (unbinder != Unbinder.EMPTY) {
             unbinder.unbind();
