@@ -9,7 +9,6 @@ import com.zenchn.library.base.ActivityLifecycleCallback;
 import com.zenchn.library.base.IActivityLifecycle;
 
 import java.lang.ref.WeakReference;
-import java.util.Observable;
 import java.util.Stack;
 
 /**
