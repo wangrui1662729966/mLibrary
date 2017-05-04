@@ -17,7 +17,7 @@ import java.util.Stack;
  * 描    述：管理activity的生命周期
  * 修订记录：
  */
-public final class DefaultActivityLifecycle extends Observable implements IActivityLifecycle {
+public class DefaultActivityLifecycle implements IActivityLifecycle {
 
     private Stack<WeakReference<Activity>> activityStack = new Stack<>();//Activity任务栈(由弱引用降低内存泄漏的隐患)
     private Stack<WeakReference<ActivityLifecycleCallback>> mCallbackStack = new Stack<>();//记录所有的观察者
