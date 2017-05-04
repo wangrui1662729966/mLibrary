@@ -5,7 +5,7 @@ import android.support.annotation.NonNull;
 
 import com.zenchn.library.base.IActivityLifecycle;
 import com.zenchn.library.dafault.DefaultActivityLifecycle;
-import com.zenchn.library.dafault.DefaultAppCompatActivity;
+import com.zenchn.library.dafault.AbstractAppCompatActivity;
 
 
 /**
@@ -13,7 +13,7 @@ import com.zenchn.library.dafault.DefaultAppCompatActivity;
  * 描    述：
  * 修订记录：
  */
-public abstract class BaseActivity extends DefaultAppCompatActivity implements IView {
+public abstract class BaseActivity extends AbstractAppCompatActivity implements IView {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

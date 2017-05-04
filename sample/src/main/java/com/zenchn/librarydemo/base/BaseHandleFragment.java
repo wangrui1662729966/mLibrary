@@ -1,12 +1,12 @@
 package com.zenchn.librarydemo.base;
 
-import com.zenchn.library.dafault.DefaultHandleFragment;
+import com.zenchn.library.dafault.AbstractHandleFragment;
 
 /**
  * 作    者：wangr on 2017/3/18 0018 14:03
  * 描    述：
  * 修订记录：
  */
-public abstract class BaseHandleFragment extends DefaultHandleFragment {
+public abstract class BaseHandleFragment extends AbstractHandleFragment {
 
 }

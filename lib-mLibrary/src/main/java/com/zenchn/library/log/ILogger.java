@@ -1,5 +1,7 @@
 package com.zenchn.library.log;
 
+import android.support.annotation.Nullable;
+
 /**
  * 作    者：wangr on 2017/4/27 11:24
  * 描    述：
@@ -8,25 +10,11 @@ package com.zenchn.library.log;
 
 public interface ILogger {
 
-    boolean isDebugMode(boolean isDebug);
+    void initLogger();
 
-    void logError(String error);
+    boolean getDebugMode();
 
-
-    void printTestLog(String rspTitle);
-
-    void printTestLog(String rspTitle, String rspDesc);
-
-
-    void printCustomLog(String customTag, String rspDesc);
-
-    void printCustomLog(String customTag, String rspDesc, int logLevel);
-
-    void printCustomLog(String customTag, String rspTitle, String rspDesc);
-
-    void printCustomLog(String customTag, String rspTitle, String rspDesc, int logLevel);
-
-    void printCustomLog(String customTag, String rspTitle, String rspDesc, int logLevel, boolean isCompact);
-
+    @Nullable
+    String getLoggerTag();
 
 }

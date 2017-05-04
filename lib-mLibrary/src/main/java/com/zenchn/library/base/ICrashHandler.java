@@ -1,5 +1,7 @@
 package com.zenchn.library.base;
 
+import java.io.File;
+
 /**
  * 作    者：wangr on 2017/4/27 16:11
  * 描    述：
@@ -7,7 +9,7 @@ package com.zenchn.library.base;
  */
 public interface ICrashHandler {
 
-    boolean getDebugMode();
+    boolean getReportMode();
 
     String getFilePath();
 
@@ -17,7 +19,6 @@ public interface ICrashHandler {
 
     String getFileNameSuffix();
 
-    void uploadExceptionToServer();
+    void uploadExceptionToServer(File logFile);
 
-    void exitApp();
 }

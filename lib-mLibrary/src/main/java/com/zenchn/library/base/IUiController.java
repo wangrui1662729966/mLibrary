@@ -7,5 +7,4 @@ package com.zenchn.library.base;
  */
 public interface IUiController extends UiCallback{
 
-
 }

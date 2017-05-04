@@ -29,4 +29,5 @@ dependencies {
     apt rootProject.ext.dependencies["butterknife-apt"]
     compile rootProject.ext.dependencies["autolayout"]
     compile rootProject.ext.dependencies["logger"]
+    testCompile 'junit:junit:4.12'
 }
