@@ -2,6 +2,7 @@ package com.zenchn.librarydemo.ui;
 
 import com.orhanobut.logger.Logger;
 import com.orhanobut.logger.Settings;
+import com.zenchn.library.log.EasyLogger;
 import com.zenchn.librarydemo.R;
 import com.zenchn.librarydemo.base.BaseActivity;
 
@@ -37,7 +38,10 @@ public class MainActivity extends BaseActivity {
         }
 //        Logger.i("test", strings);
 //        Logger.i("test1", null);
+
+        EasyLogger.d(strings);
         Logger.d(strings);
+
 //        Logger.e("hello");
 //        Logger.w("hello");
 //        Logger.v("hello");

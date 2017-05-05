@@ -11,12 +11,25 @@ android {
         versionCode rootProject.ext.android.versionCode
         versionName rootProject.ext.android.versionName
     }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    productFlavors {
+        create('all') {
+
+        }
+    }
+    publishNonDefault true
+}
+
+configurations {
+    allDebug
+    allRelease
 }
 
 dependencies {

@@ -8,11 +8,7 @@ import android.support.annotation.Nullable;
  * 修订记录：
  */
 
-public interface ILogger {
-
-    void initLogger();
-
-    boolean getDebugMode();
+public interface ILogController {
 
     @Nullable
     String getLoggerTag();
