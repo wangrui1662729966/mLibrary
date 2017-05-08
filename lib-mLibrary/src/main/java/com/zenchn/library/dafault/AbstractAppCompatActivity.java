@@ -13,8 +13,9 @@ import android.view.Window;
 import com.zenchn.library.base.IActivityLifecycle;
 import com.zenchn.library.base.IDefaultView;
 import com.zenchn.library.base.IUiController;
-import com.zenchn.library.kit.KnifeKit;
 import com.zenchn.library.utils.ToastUtils;
+
+import butterknife.ButterKnife;
 
 /**
  * 作    者：wangr on 2016/12/30 11:02
@@ -34,9 +35,9 @@ public abstract class AbstractAppCompatActivity extends FragmentActivity impleme
         initBaseData();
         if (getLayoutRes() > 0) {
             setContentView(getLayoutRes());
-            KnifeKit.bind(this);
+//            KnifeKit.bind(this);
+            ButterKnife.bind(this);
         }
-        initWidget();
     }
 
     @Override

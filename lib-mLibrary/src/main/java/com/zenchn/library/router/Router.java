@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
+import android.support.annotation.AnimatorRes;
 import android.support.annotation.Nullable;
 
 import com.zenchn.library.MLibraryConf;
@@ -11,10 +12,10 @@ import com.zenchn.library.MLibraryConf;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-
 /**
- * 作者：wangr on 2016/12/30 11:03
- * 描述：跳转路由
+ * 作    者：wangr on 2017/5/5 0005 20:55
+ * 描    述：跳转路由
+ * 修订记录：
  */
 public class Router {
 
@@ -23,6 +24,7 @@ public class Router {
     private Class<?> to;
     private Bundle data;
     private int requestCode = -1;
+
     private int enterAnim = MLibraryConf.ROUTER_ANIM_ENTER;
     private int exitAnim = MLibraryConf.ROUTER_ANIM_EXIT;
 
@@ -32,9 +34,10 @@ public class Router {
 
     private Router() {
         intent = new Intent();
+
     }
 
-    public static Router newIntent() {
+    public static Router newInstance() {
         return new Router();
     }
 
@@ -127,9 +130,17 @@ public class Router {
         return this;
     }
 
-    public Router anim(int enterAnim, int exitAnim) {
+    public Router anim(@AnimatorRes int enterAnim, @AnimatorRes int exitAnim) {
         this.enterAnim = enterAnim;
         this.exitAnim = exitAnim;
+        return this;
+    }
+
+    public Router anim(@AnimatorRes int... anim) {
+        if (anim.length <= 2) {
+            this.enterAnim = anim[0];
+            this.exitAnim = anim[1];
+        }
         return this;
     }
 

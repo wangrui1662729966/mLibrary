@@ -23,13 +23,13 @@ public class DefaultCrashHandler implements ICrashHandler {
     }
 
     @Override
-    public String getFileName() {
+    public String getFileNamePrefix() {
         return MLibraryConf.FILE_NAME_PREFIX;
     }
 
     @Override
     public String getDateFormat() {
-        return MLibraryConf.DATE_FORMAT;
+        return MLibraryConf.FILE_DATE_FORMAT;
     }
 
     @Override

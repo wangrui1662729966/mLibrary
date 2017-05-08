@@ -8,8 +8,9 @@ import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 /**
- * 作者：wangr on 2016/12/30 11:04
- * 描述：
+ * 作    者：wangr on 2017/5/5 0005 22:03
+ * 描    述：
+ * 修订记录：
  */
 public class KnifeKit {
 

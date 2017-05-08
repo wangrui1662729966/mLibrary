@@ -4,12 +4,16 @@ import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
-import android.os.*;
+import android.os.Build;
+import android.os.Environment;
 import android.os.Process;
 import android.support.annotation.NonNull;
 
+import com.zenchn.library.MLibraryConf;
 import com.zenchn.library.base.ICrashCallback;
 import com.zenchn.library.base.ICrashHandler;
+import com.zenchn.library.utils.FileUtils;
+import com.zenchn.library.utils.StringUtils;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -19,6 +23,7 @@ import java.io.PrintWriter;
 import java.lang.Thread.UncaughtExceptionHandler;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 /**
  * 作    者：wangr on 2017/5/4 10:54
@@ -116,17 +121,21 @@ public final class DefaultUncaughtHandler implements UncaughtExceptionHandler {
         if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
 
             File dir = new File(mCrashHandler.getFilePath());
-            if (!dir.exists()) {
+            if (dir.exists()) {
+                FileUtils.deleteFolder(mCrashHandler.getFilePath());
+            } else {
                 dir.mkdirs();
             }
-            long current = System.currentTimeMillis();
-            String crashTime = new SimpleDateFormat(mCrashHandler.getDateFormat()).format(new Date(current));
+
+            //获取奔溃时间（格式化）
+            String crashTime = getCrashTime();
 
             //以当前时间创建log文件
-            logFile = new File(mCrashHandler.getFilePath() + mCrashHandler.getFileName() + crashTime + mCrashHandler.getFileNameSuffix());
+            logFile = new File(mCrashHandler.getFilePath() + mCrashHandler.getFileNamePrefix() + crashTime + mCrashHandler.getFileNameSuffix());
 
             try {
                 PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(logFile)));
+
                 //导出发生异常的时间
                 pw.println(crashTime);
 
@@ -134,6 +143,7 @@ public final class DefaultUncaughtHandler implements UncaughtExceptionHandler {
                 dumpPhoneInfo(pw);
 
                 pw.println();
+
                 //导出异常的调用栈信息
                 ex.printStackTrace(pw);
 
@@ -144,6 +154,25 @@ public final class DefaultUncaughtHandler implements UncaughtExceptionHandler {
         }
 
         return logFile;
+    }
+
+    /**
+     * 获取奔溃时间
+     *
+     * @return
+     */
+    private String getCrashTime() {
+        String crashTime = "";
+        long current = System.currentTimeMillis();
+        try {
+            if (StringUtils.isNonNull(mCrashHandler.getDateFormat())) {
+                crashTime = new SimpleDateFormat(mCrashHandler.getDateFormat(), Locale.CHINA).format(new Date(current));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            crashTime = new SimpleDateFormat(MLibraryConf.FILE_DATE_FORMAT, Locale.CHINA).format(new Date(current));
+        }
+        return crashTime;
     }
 
     /**

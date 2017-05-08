@@ -1,15 +1,13 @@
-package com.zenchn.library;
+package com.zenchn.librarydemo;
 
 import android.os.Environment;
-
-import com.zenchn.library.router.Router;
 
 /**
  * 作    者：wangr on 2017/5/5 0005 21:23
  * 描    述：配置管理类
  * 修订记录：
  */
-public class MLibraryConf {
+public class GlobalConfig {
 
     public static final boolean isDebug = true;
     public static final String DEFAULT_TAG = "wangr";
@@ -18,12 +16,8 @@ public class MLibraryConf {
     public static final boolean isReport = true;
     public static final String FILE_PATH = Environment.getExternalStorageDirectory().getPath() + "/zenchn/mLibrary/log/";
     public static final String FILE_NAME_PREFIX = "crash";
-    public static final String FILE_DATE_FORMAT = "yyyy-MM-dd HH:mm:ss";
-    public static final String FILE_NAME_SUFFIX = ".log";
-
-    // #router
-    public static final int ROUTER_ANIM_ENTER = Router.RES_NONE;
-    public static final int ROUTER_ANIM_EXIT = Router.RES_NONE;
+    public static final String FILE_DATE_FORMAT = "yyyy-MM-dd HH-mm-ss";
+    public static final String FILE_NAME_SUFFIX = ".text";
 
 
 }

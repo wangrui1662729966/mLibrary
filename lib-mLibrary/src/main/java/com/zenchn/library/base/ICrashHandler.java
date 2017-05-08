@@ -13,7 +13,7 @@ public interface ICrashHandler {
 
     String getFilePath();
 
-    String getFileName();
+    String getFileNamePrefix();
 
     String getDateFormat();
 

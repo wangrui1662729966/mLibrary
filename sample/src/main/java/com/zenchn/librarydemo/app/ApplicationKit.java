@@ -4,7 +4,6 @@ import com.zenchn.library.base.ActivityLifecycleCallback;
 import com.zenchn.library.dafault.AbstractApplicationKit;
 import com.zenchn.library.dafault.DefaultActivityLifecycle;
 import com.zenchn.library.dafault.DefaultUncaughtHandler;
-import com.zenchn.librarydemo.base.CrashHandler;
 
 /**
  * 作    者：wangr on 2017/3/18 0018 13:58

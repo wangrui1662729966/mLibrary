@@ -14,16 +14,16 @@ ext {
     ]
 
     dependencies = [
-            "appcompat-v7"      : "com.android.support:appcompat-v7:${android["VSupportSdk"]}",
-            "support-v4"        : "com.android.support:support-v4:${android["VSupportSdk"]}",
-            "design"            : "com.android.support:design:${android["VSupportSdk"]}",
-            "recyclerview-v7"   : "com.android.support:recyclerview-v7:${android["VSupportSdk"]}",
-            "butterknife"       : "com.jakewharton:butterknife:8.4.0",
-            "butterknife-apt"   : "com.jakewharton:butterknife-compiler:8.4.0",
-            "autolayout"        : "com.zhy:autolayout:1.4.5",
-            "eventbus"          : "org.greenrobot:eventbus:3.0.0",
-            "logger"            : "com.orhanobut:logger:1.15",
-            "multidex"          : "com.android.support:multidex:1.0.1",
-            "junit"             : "junit:junit:4.12",
+            "appcompat-v7"        : "com.android.support:appcompat-v7:${android["VSupportSdk"]}",
+            "support-v4"          : "com.android.support:support-v4:${android["VSupportSdk"]}",
+            "design"              : "com.android.support:design:${android["VSupportSdk"]}",
+            "recyclerview-v7"     : "com.android.support:recyclerview-v7:${android["VSupportSdk"]}",
+            "butterknife"         : "com.jakewharton:butterknife:8.5.1",
+            "butterknife-compiler": "com.jakewharton:butterknife-compiler:8.5.1",
+            "autolayout"          : "com.zhy:autolayout:1.4.5",
+            "eventbus"            : "org.greenrobot:eventbus:3.0.0",
+            "logger"              : "com.orhanobut:logger:1.15",
+            "multidex"            : "com.android.support:multidex:1.0.1",
+            "junit"               : "junit:junit:4.12",
     ]
 }

@@ -18,7 +18,7 @@ public abstract class BaseActivity extends AbstractAppCompatActivity implements 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initContentView(savedInstanceState);
+        initInstanceState(savedInstanceState);
         initWidget();
     }
 
@@ -29,7 +29,7 @@ public abstract class BaseActivity extends AbstractAppCompatActivity implements 
     }
 
     //界面布局的初始化操作
-    protected void initContentView(Bundle savedInstanceState) {
+    protected void initInstanceState(Bundle savedInstanceState) {
 
     }
 

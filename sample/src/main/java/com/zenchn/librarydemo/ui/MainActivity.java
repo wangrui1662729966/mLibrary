@@ -1,12 +1,15 @@
 package com.zenchn.librarydemo.ui;
 
-import com.orhanobut.logger.Logger;
-import com.orhanobut.logger.Settings;
-import com.zenchn.library.log.EasyLogger;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListAdapter;
+import android.widget.ListView;
+
 import com.zenchn.librarydemo.R;
 import com.zenchn.librarydemo.base.BaseActivity;
 
-import java.util.ArrayList;
+import butterknife.BindView;
 
 /**
  * 作    者：wangr on 2017/4/25 15:43
@@ -14,7 +17,12 @@ import java.util.ArrayList;
  * 修订记录：
  */
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends BaseActivity implements AdapterView.OnItemClickListener {
+
+    @BindView(R.id.lv_demo)
+    ListView lvDemo;
+    private String[] _animationList = {"fade", "flipHorizontal", "flipVertical", "disappearTopLeft", "appearTopLeft", "appearBottomRight", "disappearBottomRight", "unzoom"};
+
 
     @Override
     public int getLayoutRes() {
@@ -23,29 +31,20 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void initWidget() {
-
+        ListAdapter adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, _animationList);
+        lvDemo.setAdapter(adapter);
+        lvDemo.setOnItemClickListener(this);
     }
 
     @Override
     public void initData() {
-        Logger.init("wangr");
 
-        Settings settings = new Settings();
+    }
 
-        ArrayList<String> strings = new ArrayList<>();
-        for (String s : "HELLO".split("")) {
-            strings.add(s);
-        }
-//        Logger.i("test", strings);
-//        Logger.i("test1", null);
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-        EasyLogger.d(strings);
-        Logger.d(strings);
 
-//        Logger.e("hello");
-//        Logger.w("hello");
-//        Logger.v("hello");
-//        Logger.wtf("hello");
     }
 
 }
