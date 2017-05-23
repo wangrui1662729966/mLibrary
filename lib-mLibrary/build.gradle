@@ -39,7 +39,7 @@ dependencies {
     compile rootProject.ext.dependencies["design"]
     compile rootProject.ext.dependencies["recyclerview-v7"]
     compile rootProject.ext.dependencies["butterknife"]
-    annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]
+    annotationProcessor rootProject.ext.dependencies["butterknife-apt"]
     compile rootProject.ext.dependencies["autolayout"]
     compile rootProject.ext.dependencies["logger"]
     testCompile 'junit:junit:4.12'
