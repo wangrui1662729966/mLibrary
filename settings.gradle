@@ -1,1 +1,1 @@
-include ':sample','lib-mLibrary'
+include 'lib-mLibrary', 'sample'
