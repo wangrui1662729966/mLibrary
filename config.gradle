@@ -19,7 +19,7 @@ ext {
             "design"              : "com.android.support:design:${android["VSupportSdk"]}",
             "recyclerview-v7"     : "com.android.support:recyclerview-v7:${android["VSupportSdk"]}",
             "butterknife"         : "com.jakewharton:butterknife:8.5.1",
-            "butterknife-compiler": "com.jakewharton:butterknife-compiler:8.5.1",
+            "butterknife-apt"     : "com.jakewharton:butterknife-compiler:8.5.1",
             "autolayout"          : "com.zhy:autolayout:1.4.5",
             "eventbus"            : "org.greenrobot:eventbus:3.0.0",
             "logger"              : "com.orhanobut:logger:1.15",
