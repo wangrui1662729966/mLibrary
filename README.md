@@ -14,11 +14,19 @@
 
 ## 用法
 
-* Android Studio
+Step 1. Add it in your root build.gradle at the end of repositories:
+
+	allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
 	
-	```
+Step 2. Add the dependency
+	
 	compile 'com.github.wangrui1662729966:mLibrary:1.0.0-beta'
-	```
+
 	
 	
 
