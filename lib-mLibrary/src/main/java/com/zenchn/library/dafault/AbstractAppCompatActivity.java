@@ -5,7 +5,7 @@ import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
-import android.support.v4.app.FragmentActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.Window;
@@ -13,9 +13,8 @@ import android.view.Window;
 import com.zenchn.library.base.IActivityLifecycle;
 import com.zenchn.library.base.IDefaultView;
 import com.zenchn.library.base.IUiController;
+import com.zenchn.library.kit.KnifeKit;
 import com.zenchn.library.utils.ToastUtils;
-
-import butterknife.ButterKnife;
 
 /**
  * 作    者：wangr on 2016/12/30 11:02
@@ -23,10 +22,16 @@ import butterknife.ButterKnife;
  * 修订记录：
  */
 
-public abstract class AbstractAppCompatActivity extends FragmentActivity implements IDefaultView {
+public abstract class AbstractAppCompatActivity extends AppCompatActivity implements IDefaultView {
 
     protected IActivityLifecycle mActivityLifecycle;//代理activity生命周期管理（使用单例对象）
     protected IUiController mUiController;//基本的ui控制器
+
+    public AbstractAppCompatActivity() {
+        this.mActivityLifecycle = getDefaultActivityLifecycle();
+        this.mUiController = getDefaultUiController();
+    }
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -35,8 +40,7 @@ public abstract class AbstractAppCompatActivity extends FragmentActivity impleme
         initBaseData();
         if (getLayoutRes() > 0) {
             setContentView(getLayoutRes());
-//            KnifeKit.bind(this);
-            ButterKnife.bind(this);
+            KnifeKit.bind(this);
         }
     }
 
@@ -68,11 +72,6 @@ public abstract class AbstractAppCompatActivity extends FragmentActivity impleme
     protected void onDestroy() {
         super.onDestroy();
         mActivityLifecycle.onActivityDestroyed(this);//activity出栈
-    }
-
-    public AbstractAppCompatActivity() {
-        this.mActivityLifecycle = getDefaultActivityLifecycle();
-        this.mUiController = getDefaultUiController();
     }
 
     @Override

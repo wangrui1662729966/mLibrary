@@ -31,10 +31,10 @@ import javax.crypto.spec.DESKeySpec;
 import javax.crypto.spec.SecretKeySpec;
 
 /**
- * 作者：wangr on 2016/12/30 11:04
- * 描述： 
+ * 作    者：wangr on 2017/5/26 13:54
+ * 描    述：编解码器的封装
+ * 修订记录：
  */
-
 public class Codec {
 
     public static class MD5 {
@@ -204,7 +204,8 @@ public class Codec {
          * @throws Exception
          */
         public static String initMacKey(Algorithm algorithm) throws Exception {
-            if (algorithm == null) algorithm = Algorithm.Hmac_MD5;
+            if (algorithm == null)
+                algorithm = Algorithm.Hmac_MD5;
             KeyGenerator keyGenerator = KeyGenerator.getInstance(algorithm.getType());
             SecretKey secretKey = keyGenerator.generateKey();
 
@@ -514,13 +515,6 @@ public class Codec {
             return keyMap;
         }
 
-    }
-
-    public static boolean checkNull(String text) {
-        if (text == null || text.length() == 0)
-            return true;
-        else
-            return false;
     }
 
     public enum Algorithm {

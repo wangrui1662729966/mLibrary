@@ -18,11 +18,11 @@ public class StringUtils {
      * @return
      */
     public static boolean isEmpty(CharSequence charSequence) {
-        return null == charSequence || charSequence.length() == 0;
+        return charSequence == null || charSequence.length() == 0;
     }
 
     /**
-     * 判断一列字符串有内容(非空且非空字符串)
+     * 判断多个字符串有内容(非空且非空字符串)
      *
      * @param charSequences
      * @return
@@ -116,11 +116,11 @@ public class StringUtils {
     /**
      * 判断两字符串忽略大小写是否相等
      *
-     * @param characterA 待校验字符串a
-     * @param characterB 待校验字符串b
+     * @param aCharacter 待校验字符串a
+     * @param bCharacter 待校验字符串b
      */
-    public static boolean equalsIgnoreCase(String characterA, String characterB) {
-        return (characterA == characterB) || (characterA != null) && (characterA.length() == characterB.length()) && characterA.regionMatches(true, 0, characterB, 0, characterB.length());
+    public static boolean equalsIgnoreCase(String aCharacter, String bCharacter) {
+        return (aCharacter == bCharacter) || (aCharacter != null) && (characterA.length() == characterB.length()) && characterA.regionMatches(true, 0, characterB, 0, characterB.length());
     }
 
     /**

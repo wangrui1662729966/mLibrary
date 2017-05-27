@@ -11,7 +11,6 @@ import com.zenchn.library.router.Router;
  */
 public class MLibraryConf {
 
-    public static final boolean isDebug = true;
     public static final String DEFAULT_TAG = "wangr";
 
     // #crash 是否收集报错日志

@@ -8,7 +8,7 @@ import android.support.v4.app.FragmentTransaction;
 import com.zenchn.library.R;
 import com.zenchn.library.base.IDefaultFragmentView;
 import com.zenchn.library.base.IUiController;
-import com.zenchn.library.utils.KeyboardUtils;
+import com.zenchn.library.kit.AndroidKits;
 
 import java.lang.ref.WeakReference;
 import java.util.Stack;
@@ -73,8 +73,8 @@ public abstract class AbstractFragmentActivity extends AbstractAppCompatActivity
 
     @Override
     public boolean backToPreFragment() {
-        if (KeyboardUtils.isSoftInputShow(this))
-            KeyboardUtils.hideSoftInput(this);
+        if (AndroidKits.Keyboard.isSoftInputShow(this))
+            AndroidKits.Keyboard.hideSoftInput(this);
         if (fragmentStack.size() > 1) {
             Fragment topFragment = fragmentStack.pop().get();
             Fragment targetFragment = fragmentStack.peek().get();

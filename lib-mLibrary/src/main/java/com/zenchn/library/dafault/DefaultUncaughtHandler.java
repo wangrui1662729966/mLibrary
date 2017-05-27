@@ -12,7 +12,7 @@ import android.support.annotation.NonNull;
 import com.zenchn.library.MLibraryConf;
 import com.zenchn.library.base.ICrashCallback;
 import com.zenchn.library.base.ICrashHandler;
-import com.zenchn.library.utils.FileUtils;
+import com.zenchn.library.kit.JavaKits;
 import com.zenchn.library.utils.StringUtils;
 
 import java.io.BufferedWriter;
@@ -122,7 +122,7 @@ public final class DefaultUncaughtHandler implements UncaughtExceptionHandler {
 
             File dir = new File(mCrashHandler.getFilePath());
             if (dir.exists()) {
-                FileUtils.deleteFolder(mCrashHandler.getFilePath());
+                JavaKits.File.deleteFile(mCrashHandler.getFilePath());
             } else {
                 dir.mkdirs();
             }

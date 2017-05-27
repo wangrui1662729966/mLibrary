@@ -21,9 +21,7 @@ ext {
             "butterknife"         : "com.jakewharton:butterknife:8.6.0",
             "butterknife-apt"     : "com.jakewharton:butterknife-compiler:8.6.0",
             "autolayout"          : "com.zhy:autolayout:1.4.5",
-            "eventbus"            : "org.greenrobot:eventbus:3.0.0",
             "logger"              : "com.orhanobut:logger:1.15",
-            "multidex"            : "com.android.support:multidex:1.0.1",
             "junit"               : "junit:junit:4.12",
     ]
 }

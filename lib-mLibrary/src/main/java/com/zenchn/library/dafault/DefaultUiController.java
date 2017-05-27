@@ -7,7 +7,7 @@ import android.support.annotation.StringRes;
 import com.zenchn.library.R;
 import com.zenchn.library.base.IUiController;
 import com.zenchn.library.utils.ToastUtils;
-import com.zenchn.library.widget.CustomProgress;
+import com.zenchn.library.widget.EasyLoading;
 
 /**
  * 作    者：wangr on 2017/4/27 14:56
@@ -17,7 +17,7 @@ import com.zenchn.library.widget.CustomProgress;
 public class DefaultUiController implements IUiController {
 
     protected Context mContext;
-    protected CustomProgress mProgress;//加载提示框
+    protected EasyLoading mProgress;//加载提示框
 
     public DefaultUiController(@NonNull Context mContext) {
         this.mContext = mContext;
@@ -26,7 +26,7 @@ public class DefaultUiController implements IUiController {
     @Override
     public void showProgress() {
         if (mProgress == null) {
-            mProgress = new CustomProgress(mContext);
+            mProgress = new EasyLoading(mContext);
             mProgress.setCancelable(false);
             mProgress.setMsg(mContext.getResources().getString(R.string.mLibrary_loading));
         }

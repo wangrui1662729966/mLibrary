@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:orientation="vertical">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="260dp"
@@ -27,8 +28,8 @@
             android:id="@+id/content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="@dimen/m_small_padding"
-            android:gravity="center">
+            android:gravity="center"
+            android:padding="@dimen/m_small_padding">
 
             <TextView
                 android:id="@+id/message"
@@ -39,8 +40,8 @@
                 android:paddingLeft="@dimen/m_big_padding"
                 android:paddingRight="@dimen/m_big_padding"
                 android:paddingTop="@dimen/m_small_padding"
-                android:textColor="@color/ios_black"
-                android:text="选择一种愉悦的极速开发模式！"/>
+                android:text="选择一种愉悦的极速开发模式！"
+                android:textColor="@color/ios_black"/>
         </LinearLayout>
 
         <include
