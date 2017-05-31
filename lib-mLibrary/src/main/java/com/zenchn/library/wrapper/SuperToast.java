@@ -1,4 +1,4 @@
-package com.zenchn.library.utils;
+package com.zenchn.library.wrapper;
 
 import android.content.Context;
 import android.os.Handler;
@@ -15,9 +15,9 @@ import com.zenchn.library.R;
  * 描    述：Toast工具类
  * 修订记录：
  */
-public class ToastUtils {
+public class SuperToast {
 
-    private ToastUtils() {
+    private SuperToast() {
         throw new UnsupportedOperationException("u can't instantiate me...");
     }
 
@@ -34,8 +34,8 @@ public class ToastUtils {
      * @param customToastView
      */
     public static void setCustomToastView(View customToastView) {
-        ToastUtils.customToastView = customToastView;
-        ToastUtils.toastTextView = (TextView) customToastView.findViewById(R.id.text);
+        SuperToast.customToastView = customToastView;
+        SuperToast.toastTextView = (TextView) customToastView.findViewById(R.id.text);
         if (toastTextView == null)
             throw new IllegalStateException("make toast without text view ...");
     }

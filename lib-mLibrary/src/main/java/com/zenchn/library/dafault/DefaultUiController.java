@@ -6,7 +6,7 @@ import android.support.annotation.StringRes;
 
 import com.zenchn.library.R;
 import com.zenchn.library.base.IUiController;
-import com.zenchn.library.utils.ToastUtils;
+import com.zenchn.library.wrapper.SuperToast;
 import com.zenchn.library.widget.EasyLoading;
 
 /**
@@ -47,11 +47,11 @@ public class DefaultUiController implements IUiController {
 
     @Override
     public void showMessage(String message) {
-        ToastUtils.showCustomMessage(mContext, message);
+        SuperToast.showCustomMessage(mContext, message);
     }
 
     @Override
     public void showResMessage(@StringRes int resId) {
-        ToastUtils.showCustomMessage(mContext, mContext.getString(resId));
+        SuperToast.showCustomMessage(mContext, mContext.getString(resId));
     }
 }

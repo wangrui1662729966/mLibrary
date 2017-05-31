@@ -8,7 +8,7 @@ import android.view.View;
 import com.zenchn.library.R;
 import com.zenchn.library.base.IApplicationKit;
 import com.zenchn.library.base.ICrashCallback;
-import com.zenchn.library.utils.ToastUtils;
+import com.zenchn.library.wrapper.SuperToast;
 
 /**
  * 作    者：wangr on 2017/2/20 22:51
@@ -42,7 +42,7 @@ public abstract class AbstractApplicationKit implements IApplicationKit, ICrashC
      */
     protected void initToastStyle() {
         View toastView = View.inflate(application, R.layout.m_toast_ios_style_simple, null);
-        ToastUtils.setCustomToastView(toastView);
+        SuperToast.setCustomToastView(toastView);
     }
 
     /**

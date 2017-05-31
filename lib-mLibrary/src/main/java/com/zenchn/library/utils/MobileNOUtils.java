@@ -1,33 +1,37 @@
 package com.zenchn.library.utils;
 
-import android.text.TextUtils;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
+import com.zenchn.library.kit.RegexKit;
 
 /**
- * 作    者：wangr on 2017/4/24 11:06
+ * 作    者：wangr on 2017/5/31 9:57
  * 描    述：手机号工具类
  * 修订记录：
  */
 public class MobileNOUtils {
 
     /**
-     * 简单验证手机格式
-     * 移动：134、135、136、137、138、139、150、151、157(TD)、158、159、176、187、188
-     * 联通：130、131、132、152、155、156、176、185、186
-     * 电信：133、153、180、181、177、189、（1349卫通） 总结起来就是第一位必定为1，第二位必定为3或5或8，其他位置的可以为0-9
+     * 判断是否是手机号码(简单模式)
      *
      * @param mobile
      * @return
      */
-    public static boolean isMobileNO(String mobile) {
-        String telRegex = "[1][3578]\\d{9}";// "[1]"代表第1位为数字1，"[3578]"代表第二位可以为3、5、7、8中的一个，"\\d{9}"代表后面是可以是0～9的数字，有9位。
-        if (TextUtils.isEmpty(mobile))
-            return false;
-        else
-            return mobile.matches(telRegex);
+    public static boolean isMobileNoSimple(@NonNull String mobile) {
+        String rawMobileNO = getRawMobileNO(mobile);
+        return StringUtils.isNonNull(rawMobileNO) && rawMobileNO.matches(RegexKit.REGEX_MOBILE_SIMPLE);
+    }
+
+    /**
+     * 判断是否是手机号码(严格模式)
+     *
+     * @param mobile
+     * @return
+     */
+    public static boolean isMobileNoExact(@NonNull String mobile) {
+        String rawMobileNO = getRawMobileNO(mobile);
+        return StringUtils.isNonNull(rawMobileNO) && rawMobileNO.matches(RegexKit.REGEX_MOBILE_EXACT);
     }
 
     /**
@@ -36,14 +40,10 @@ public class MobileNOUtils {
      * @param mobile
      * @return
      */
-    public static String getEncryptMobileNO(String mobile) {
-        String encryptMobile = "";
-        try {
-            encryptMobile = new StringBuilder().append(mobile, 0, 3).append("****").append(mobile, 7, mobile.length()).toString();
-        } catch (Exception e) {
-            return encryptMobile;
-        }
-        return encryptMobile;
+    public static String getEncryptMobileNO(@NonNull String mobile) {
+        if (isMobileNoSimple(mobile))
+            return mobile.replaceAll("(\\d{3})\\d{4}(\\d{4})", "$1****$2");
+        return null;
     }
 
     /**
@@ -52,29 +52,10 @@ public class MobileNOUtils {
      * @param mobile
      * @return
      */
-    public static String getRawMobileNO(String mobile) {
-
-        String dest = "";
-
-        if (mobile != null) {
-
-            //去除空格
-            Pattern p = Pattern.compile("\\s*|\t|\r|\n");
-            Matcher m = p.matcher(mobile);
-            dest = m.replaceAll("");
-
-            //去除86前缀
-            if (dest.startsWith("86")) {
-                dest = dest.replace("86", "");
-            }
-
-            //去除+86前缀
-            if (dest.startsWith("+86")) {
-                dest = dest.replace("+86", "");
-            }
-
-        }
-        return dest;
+    public static String getRawMobileNO(@Nullable String mobile) {
+        if (StringUtils.isEmpty(mobile))
+            return null;
+        return mobile.replaceAll(RegexKit.REGEX_BLANK_LINE, "").replaceAll(RegexKit.REGEX_MOBILE_ZONE, "");
     }
 
 }

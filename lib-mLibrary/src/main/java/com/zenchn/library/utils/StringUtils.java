@@ -120,7 +120,7 @@ public class StringUtils {
      * @param bCharacter 待校验字符串b
      */
     public static boolean equalsIgnoreCase(String aCharacter, String bCharacter) {
-        return (aCharacter == bCharacter) || (aCharacter != null) && (characterA.length() == characterB.length()) && characterA.regionMatches(true, 0, characterB, 0, characterB.length());
+        return (aCharacter == bCharacter) || (aCharacter != null) && (aCharacter.length() == bCharacter.length()) && aCharacter.regionMatches(true, 0, bCharacter, 0, bCharacter.length());
     }
 
     /**
@@ -136,38 +136,38 @@ public class StringUtils {
     /**
      * 首字母大写
      *
-     * @param character 待转字符串
+     * @param s 待转字符串
      * @return 首字母大写字符串
      */
-    public static String upperFirstLetter(String character) {
-        if (isEmpty(character) || !Character.isLowerCase(character.charAt(0))) return character;
-        return String.valueOf((char) (character.charAt(0) - 32)) + character.substring(1);
+    public static String upperFirstLetter(String s) {
+        if (isEmpty(s) || !Character.isLowerCase(s.charAt(0))) return s;
+        return String.valueOf((char) (s.charAt(0) - 32)) + s.substring(1);
     }
 
     /**
      * 首字母小写
      *
-     * @param character 待转字符串
+     * @param s 待转字符串
      * @return 首字母小写字符串
      */
-    public static String lowerFirstLetter(String character) {
-        if (isEmpty(character) || !Character.isUpperCase(character.charAt(0))) {
-            return character;
+    public static String lowerFirstLetter(String s) {
+        if (isEmpty(s) || !Character.isUpperCase(s.charAt(0))) {
+            return s;
         }
-        return String.valueOf((char) (character.charAt(0) + 32)) + character.substring(1);
+        return String.valueOf((char) (s.charAt(0) + 32)) + s.substring(1);
     }
 
     /**
      * 反转字符串
      *
-     * @param character 待反转字符串
+     * @param s 待反转字符串
      * @return 反转字符串
      */
-    public static String reverse(String character) {
-        int len = getNonNullLength(character);
-        if (len <= 1) return character;
+    public static String reverse(String s) {
+        int len = getNonNullLength(s);
+        if (len <= 1) return s;
         int mid = len >> 1;
-        char[] chars = character.toCharArray();
+        char[] chars = s.toCharArray();
         char c;
         for (int i = 0; i < mid; ++i) {
             c = chars[i];

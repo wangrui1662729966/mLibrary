@@ -1,4 +1,4 @@
-package com.zenchn.library.utils;
+package com.zenchn.library.wrapper;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -21,7 +21,7 @@ import java.util.ArrayList;
  * 修订记录：
  */
 @SuppressLint("NewApi")
-public class NotifyUtils {
+public class SuperNotify {
 
     private static final int FLAG = Notification.FLAG_INSISTENT;
     int requestCode = (int) SystemClock.uptimeMillis();
@@ -31,7 +31,7 @@ public class NotifyUtils {
     private Notification.Builder nBuilder;
     private Context mContext;
 
-    public NotifyUtils(Context context, int ID) {
+    public SuperNotify(Context context, int ID) {
         this.NOTIFICATION_ID = ID;
         mContext = context;
         // 获取系统服务来初始化对象

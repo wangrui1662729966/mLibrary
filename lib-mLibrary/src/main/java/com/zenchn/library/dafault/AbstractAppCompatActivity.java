@@ -14,7 +14,7 @@ import com.zenchn.library.base.IActivityLifecycle;
 import com.zenchn.library.base.IDefaultView;
 import com.zenchn.library.base.IUiController;
 import com.zenchn.library.kit.KnifeKit;
-import com.zenchn.library.utils.ToastUtils;
+import com.zenchn.library.wrapper.SuperToast;
 
 /**
  * 作    者：wangr on 2016/12/30 11:02
@@ -103,13 +103,13 @@ public abstract class AbstractAppCompatActivity extends AppCompatActivity implem
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
-        ToastUtils.cancelCurrentToast();
+        SuperToast.cancelCurrentToast();
         return super.dispatchTouchEvent(ev);
     }
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        ToastUtils.cancelCurrentToast();
+        SuperToast.cancelCurrentToast();
         return super.onKeyDown(keyCode, event);
     }
 
