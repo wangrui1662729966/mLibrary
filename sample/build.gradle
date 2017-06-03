@@ -29,10 +29,6 @@ dependencies {
     compile rootProject.ext.dependencies["appcompat-v7"]
     compile rootProject.ext.dependencies["butterknife"]
     annotationProcessor rootProject.ext.dependencies["butterknife-apt"]
-
     testCompile 'junit:junit:4.12'
-
-    //依赖library
-    debugCompile project(path: ':lib-mLibrary', configuration: 'allDebug')
-    releaseCompile project(path: ':lib-mLibrary', configuration: 'allRelease')
+    compile project(':library')
 }

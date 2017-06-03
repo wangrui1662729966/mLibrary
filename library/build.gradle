@@ -19,11 +19,6 @@ android {
     }
 }
 
-configurations {
-    allDebug
-    allRelease
-}
-
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile rootProject.ext.dependencies["butterknife"]
