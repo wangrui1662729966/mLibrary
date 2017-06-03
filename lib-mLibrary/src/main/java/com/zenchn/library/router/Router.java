@@ -7,7 +7,7 @@ import android.os.Parcelable;
 import android.support.annotation.AnimatorRes;
 import android.support.annotation.Nullable;
 
-import com.zenchn.library.MLibraryConf;
+import com.zenchn.library.GlobalConfig;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -25,8 +25,8 @@ public class Router {
     private Bundle data;
     private int requestCode = -1;
 
-    private int enterAnim = MLibraryConf.ROUTER_ANIM_ENTER;
-    private int exitAnim = MLibraryConf.ROUTER_ANIM_EXIT;
+    private int enterAnim = GlobalConfig.ROUTER_ANIM_ENTER;
+    private int exitAnim = GlobalConfig.ROUTER_ANIM_EXIT;
 
     public static final int RES_NONE = -1;
 

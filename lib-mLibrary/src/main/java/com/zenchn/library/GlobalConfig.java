@@ -9,7 +9,7 @@ import com.zenchn.library.router.Router;
  * 描    述：配置管理类
  * 修订记录：
  */
-public class MLibraryConf {
+public class GlobalConfig {
 
     public static final String DEFAULT_TAG = "wangr";
 

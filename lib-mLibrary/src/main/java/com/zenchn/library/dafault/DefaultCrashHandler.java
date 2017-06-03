@@ -1,6 +1,6 @@
 package com.zenchn.library.dafault;
 
-import com.zenchn.library.MLibraryConf;
+import com.zenchn.library.GlobalConfig;
 import com.zenchn.library.base.ICrashHandler;
 
 import java.io.File;
@@ -14,27 +14,27 @@ public class DefaultCrashHandler implements ICrashHandler {
 
     @Override
     public boolean getReportMode() {
-        return MLibraryConf.isReport;
+        return GlobalConfig.isReport;
     }
 
     @Override
     public String getFilePath() {
-        return MLibraryConf.FILE_PATH;
+        return GlobalConfig.FILE_PATH;
     }
 
     @Override
     public String getFileNamePrefix() {
-        return MLibraryConf.FILE_NAME_PREFIX;
+        return GlobalConfig.FILE_NAME_PREFIX;
     }
 
     @Override
     public String getDateFormat() {
-        return MLibraryConf.FILE_DATE_FORMAT;
+        return GlobalConfig.FILE_DATE_FORMAT;
     }
 
     @Override
     public String getFileNameSuffix() {
-        return MLibraryConf.FILE_NAME_SUFFIX;
+        return GlobalConfig.FILE_NAME_SUFFIX;
     }
 
     @Override

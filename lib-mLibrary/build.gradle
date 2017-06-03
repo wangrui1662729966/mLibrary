@@ -35,6 +35,7 @@ configurations {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile rootProject.ext.dependencies["butterknife"]
+    annotationProcessor rootProject.ext.dependencies["butterknife-apt"]
     compile rootProject.ext.dependencies["autolayout"]
     compile rootProject.ext.dependencies["logger"]
 }

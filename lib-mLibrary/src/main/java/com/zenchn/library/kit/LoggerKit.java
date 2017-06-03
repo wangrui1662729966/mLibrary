@@ -4,7 +4,7 @@ import android.support.annotation.Nullable;
 
 import com.orhanobut.logger.Logger;
 import com.zenchn.library.BuildConfig;
-import com.zenchn.library.MLibraryConf;
+import com.zenchn.library.GlobalConfig;
 import com.zenchn.library.utils.StringUtils;
 
 /**
@@ -18,12 +18,12 @@ public class LoggerKit {
 
     public LoggerKit() {
         if (isDebug)
-            Logger.init(MLibraryConf.DEFAULT_TAG);
+            Logger.init(GlobalConfig.DEFAULT_TAG);
     }
 
     public LoggerKit setLoggerTag(String loggerTag) {
         if (isDebug)
-            Logger.init(StringUtils.getNonNull(loggerTag, MLibraryConf.DEFAULT_TAG).toString());
+            Logger.init(StringUtils.getNonNull(loggerTag, GlobalConfig.DEFAULT_TAG).toString());
         return this;
     }
 
