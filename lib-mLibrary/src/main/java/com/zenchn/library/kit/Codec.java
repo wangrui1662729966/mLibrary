@@ -25,11 +25,9 @@ import java.util.Map;
 
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
-import javax.crypto.Mac;
 import javax.crypto.SecretKey;
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.DESKeySpec;
-import javax.crypto.spec.SecretKeySpec;
 
 /**
  * 作    者：wangr on 2017/5/26 13:54
@@ -179,12 +177,6 @@ public class Codec {
      */
     public static class SHA1 {
 
-        /**
-         * SHA1加密
-         *
-         * @param data
-         * @return
-         */
         public static String encrypt(String data) {
             return Codec.encrypt(data, "SHA-1");
         }
@@ -197,12 +189,7 @@ public class Codec {
      * 修订记录：
      */
     public static class SHA256 {
-        /**
-         * SHA256加密
-         *
-         * @param data
-         * @return
-         */
+
         public static String encrypt(String data) {
             return Codec.encrypt(data, "SHA-256");
         }
@@ -215,19 +202,17 @@ public class Codec {
      */
     public static class SHA384 {
 
-        /**
-         * SHA384加密
-         *
-         * @param data
-         * @return
-         */
         public static String encrypt(String data) {
             return Codec.encrypt(data, "SHA-384");
         }
 
     }
 
-
+    /**
+     * 作    者：wangr on 2017/6/3 13:03
+     * 描    述： BASE64编码解码
+     * 修订记录：
+     */
     public static class BASE64 {
 
         public static byte[] encode(byte[] plain) {
@@ -246,44 +231,6 @@ public class Codec {
             return Base64.decode(text, Base64.DEFAULT);
         }
     }
-
-
-    public static class MAC {
-        /**
-         * 初始化HMAC密钥
-         *
-         * @param algorithm 算法，可为空。默认为：Algorithm.Hmac_MD5
-         * @return
-         * @throws Exception
-         */
-        public static String initMacKey(Algorithm algorithm) throws Exception {
-            if (algorithm == null)
-                algorithm = Algorithm.Hmac_MD5;
-            KeyGenerator keyGenerator = KeyGenerator.getInstance(algorithm.getType());
-            SecretKey secretKey = keyGenerator.generateKey();
-
-            return BASE64.encodeToString(secretKey.getEncoded());
-        }
-
-        /**
-         * HMAC加密
-         *
-         * @param plain     明文
-         * @param key       key
-         * @param algorithm 算法，可为空。默认为：Algorithm.Hmac_MD5
-         * @return
-         * @throws Exception
-         */
-        public static byte[] encrypt(byte[] plain, String key, Algorithm algorithm) throws Exception {
-            if (algorithm == null) algorithm = Algorithm.Hmac_MD5;
-            SecretKey secretKey = new SecretKeySpec(BASE64.decode(key), algorithm.getType());
-            Mac mac = Mac.getInstance(secretKey.getAlgorithm());
-            mac.init(secretKey);
-
-            return mac.doFinal(plain);
-        }
-    }
-
 
     /**
      * 作    者：wangr on 2017/5/31 17:18
@@ -468,8 +415,7 @@ public class Codec {
          * @return
          * @throws Exception
          */
-        public static byte[] decryptByPrivateKey(byte[] data, String key)
-                throws Exception {
+        public static byte[] decryptByPrivateKey(byte[] data, String key) throws Exception {
             byte[] keyBytes = BASE64.decode(key);   // 对密钥解密
 
             PKCS8EncodedKeySpec pkcs8KeySpec = new PKCS8EncodedKeySpec(keyBytes);   // 取得私钥
@@ -491,8 +437,7 @@ public class Codec {
          * @return
          * @throws Exception
          */
-        public static byte[] decryptByPublicKey(byte[] data, String key)
-                throws Exception {
+        public static byte[] decryptByPublicKey(byte[] data, String key) throws Exception {
             byte[] keyBytes = BASE64.decode(key);       // 对密钥解密
 
             // 取得公钥
@@ -591,41 +536,18 @@ public class Codec {
          * @throws Exception
          */
         public static Map<String, Object> initKey() throws Exception {
-            KeyPairGenerator keyPairGen = KeyPairGenerator
-                    .getInstance(Algorithm.RSA.getType());
+            KeyPairGenerator keyPairGen = KeyPairGenerator.getInstance("RSA");
             keyPairGen.initialize(1024);
 
             KeyPair keyPair = keyPairGen.generateKeyPair();
             RSAPublicKey publicKey = (RSAPublicKey) keyPair.getPublic();    // 公钥
             RSAPrivateKey privateKey = (RSAPrivateKey) keyPair.getPrivate();     // 私钥
-            Map<String, Object> keyMap = new HashMap<String, Object>(2);
+            Map<String, Object> keyMap = new HashMap<>(2);
 
             keyMap.put(PUBLIC_KEY, publicKey);
             keyMap.put(PRIVATE_KEY, privateKey);
             return keyMap;
         }
 
-    }
-
-    public enum Algorithm {
-        SHA("SHA"),
-        MD5("MD5"),
-        Hmac_MD5("HmacMD5"),
-        Hmac_SHA1("HmacSHA1"),
-        Hmac_SHA256("HmacSHA256"),
-        Hmac_SHA384("HmacSHA384"),
-        Hmac_SHA512("HmacSHA512"),
-        DES("DES"),
-        RSA("RSA");
-
-        private String type;
-
-        Algorithm(String type) {
-            this.type = type;
-        }
-
-        public String getType() {
-            return type;
-        }
     }
 }

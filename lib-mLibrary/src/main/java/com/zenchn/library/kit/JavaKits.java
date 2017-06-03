@@ -71,7 +71,7 @@ public class JavaKits {
      * @param collection
      * @return
      */
-    public static boolean isEmpty(Collection collection) {
+    public static boolean isEmpty(Collection<?> collection) {
         return null == collection || collection.isEmpty();
     }
 
@@ -81,7 +81,7 @@ public class JavaKits {
      * @param map
      * @return
      */
-    public static boolean isEmpty(Map map) {
+    public static boolean isEmpty(Map<?, ?> map) {
         return null == map || map.isEmpty();
     }
 
@@ -91,7 +91,7 @@ public class JavaKits {
      * @param collection
      * @return
      */
-    public static boolean isNonNull(Collection collection) {
+    public static boolean isNonNull(Collection<?> collection) {
         return null != collection && !collection.isEmpty();
     }
 
@@ -101,7 +101,7 @@ public class JavaKits {
      * @param map
      * @return
      */
-    public static boolean isNonNull(Map map) {
+    public static boolean isNonNull(Map<?, ?> map) {
         return null != map && !map.isEmpty();
     }
 
@@ -142,8 +142,8 @@ public class JavaKits {
             if (closeable != null) {
                 try {
                     closeable.close();
-                } catch (Exception ignored) {
-                    ignored.printStackTrace();
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
             }
         }

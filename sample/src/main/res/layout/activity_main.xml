@@ -23,9 +23,9 @@
         android:id="@+id/bt_open_light"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/bt_open"
         android:layout_marginTop="5dp"
         android:onClick="openLight"
-        android:layout_below="@+id/bt_open"
         android:text="打开闪光灯"
         android:textSize="15sp"/>
 
