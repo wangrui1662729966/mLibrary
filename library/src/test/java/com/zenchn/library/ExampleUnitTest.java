@@ -1,4 +1,4 @@
-package com.zenchn.mlibrary;
+package com.zenchn.library;
 
 import org.junit.Test;
 

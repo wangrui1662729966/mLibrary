@@ -6,8 +6,8 @@ import android.support.annotation.StringRes;
 
 import com.zenchn.library.R;
 import com.zenchn.library.base.IUiController;
-import com.zenchn.library.wrapper.SuperToast;
 import com.zenchn.library.widget.EasyLoading;
+import com.zenchn.library.wrapper.SuperToast;
 
 /**
  * 作    者：wangr on 2017/4/27 14:56

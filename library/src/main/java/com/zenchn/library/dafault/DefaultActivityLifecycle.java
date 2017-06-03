@@ -123,7 +123,7 @@ public class DefaultActivityLifecycle implements IActivityLifecycle {
             mCallbackStack.get(i).get().onDestroyedSelf();//TODO 杀死自己时候的回调
         }
         finishAllActivity();
-        android.os.Process.killProcess(Process.myPid());
+        Process.killProcess(Process.myPid());
     }
 
 }

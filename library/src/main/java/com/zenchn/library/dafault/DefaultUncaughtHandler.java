@@ -101,7 +101,7 @@ public final class DefaultUncaughtHandler implements UncaughtExceptionHandler {
         if (mCrashCallback != null) {
             mCrashCallback.onCrash(thread, ex);
         } else {
-            android.os.Process.killProcess(Process.myPid());//结束进程
+            Process.killProcess(Process.myPid());//结束进程
         }
     }
 
