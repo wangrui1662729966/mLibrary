@@ -140,7 +140,7 @@ public class EasyDialog extends Dialog {
         public EasyDialog build() {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-            final EasyDialog dialog = new EasyDialog(context, R.style.AppTheme_Dialog);
+            final EasyDialog dialog = new EasyDialog(context, R.style.LoadingProgress);
 
             View layout = inflater.inflate(R.layout.m_dialog_common_layout, null);
 

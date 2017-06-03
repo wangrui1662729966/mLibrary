@@ -28,7 +28,7 @@ public class EasyLoading extends ProgressDialog implements OnShowListener, OnDis
     private String msg;
 
     public EasyLoading(Context context) {
-        this(context, R.style.AppTheme_Dialog_NoTitleBar);
+        this(context, R.style.LoadingProgress_NoTitleBar);
     }
 
     public EasyLoading(Context context, int theme) {
